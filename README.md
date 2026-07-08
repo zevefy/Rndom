@@ -1,2 +1,1 @@
-# Rndom
-OwO
+# us what script?
