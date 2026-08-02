@@ -736,6 +736,14 @@ end
 -- Apply draggable functionality to the button
 MakeDraggable(MobileReopenButton)
 
+-- Close button function
+AddConnection(CloseBtn.MouseButton1Up, function()
+    MainWindow.Visible = false
+    MobileReopenButton.Visible = true
+    UIHidden = true
+    WindowConfig.CloseCallback()
+end)
+
 -- Toggle interface visibility with 'M' key
 AddConnection(UserInputService.InputBegan, function(Input)
     if Input.KeyCode == Enum.KeyCode.M then
