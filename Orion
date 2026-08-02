@@ -408,9 +408,9 @@ function OrionLib:MakeNotification(NotificationConfig)
 				AutomaticSize = Enum.AutomaticSize.X,
 				Position = UDim2.new(0, 30, 0, 0),
 				Font = Enum.Font.GothamBold,
-				Name = "Title"
+				Name = "Title",
 			}),
-			MakeElement("Padding", 0, 0, 15, 0)
+			MakeElement("Padding", 0, 0, 0, 0)
 		})
 
 		TweenService:Create(NotificationFrame, TweenInfo.new(0.5, Enum.EasingStyle.Quint), {Position = UDim2.new(0, 0, 0, 0)}):Play()
