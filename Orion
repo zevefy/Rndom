@@ -391,24 +391,31 @@ function OrionLib:MakeNotification(NotificationConfig)
 		NotificationConfig.Time = NotificationConfig.Time or 15
 
 		local NotificationParent = SetProps(MakeElement("TFrame"), {
-			Size = UDim2.new(1, 0, 0, 0),
-			AutomaticSize = Enum.AutomaticSize.Y,
+			Size = UDim2.new(0, 0, 0, 0),
+			AutomaticSize = Enum.AutomaticSize.XY,
 			Parent = NotificationHolder
 		})
 
 		local NotificationFrame = SetChildren(SetProps(MakeElement("RoundFrame", Color3.fromRGB(25, 25, 25), 0, 10), {
 			Parent = NotificationParent, 
-			Size = UDim2.new(1, 0, 0, 0),
+			Size = UDim2.new(0, 0, 0, 0),
 			Position = UDim2.new(1, -55, 0, 0),
 			BackgroundTransparency = 0,
-			AutomaticSize = Enum.AutomaticSize.Y
+			AutomaticSize = Enum.AutomaticSize.XY
 		}), {
 			SetProps(MakeElement("Label", NotificationConfig.Name, 15), {
-				Size = UDim2.new(1, -30, 0, 20),
+				Size = UDim2.new(0, 0, 0, 20),
+				AutomaticSize = Enum.AutomaticSize.X,
 				Position = UDim2.new(0, 30, 0, 0),
 				Font = Enum.Font.GothamBold,
 				Name = "Title"
 			}),
+			SetProps(MakeElement("UIPadding"), {
+				PaddingRight = UDim.new(0, 15),
+				PaddingLeft = UDim.new(0, 0),
+				PaddingTop = UDim.new(0, 0),
+				PaddingBottom = UDim.new(0, 0)
+			})
 		})
 
 		TweenService:Create(NotificationFrame, TweenInfo.new(0.5, Enum.EasingStyle.Quint), {Position = UDim2.new(0, 0, 0, 0)}):Play()
