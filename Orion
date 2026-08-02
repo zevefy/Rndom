@@ -410,12 +410,7 @@ function OrionLib:MakeNotification(NotificationConfig)
 				Font = Enum.Font.GothamBold,
 				Name = "Title"
 			}),
-			SetProps(MakeElement("UIPadding"), {
-				PaddingRight = UDim.new(0, 15),
-				PaddingLeft = UDim.new(0, 0),
-				PaddingTop = UDim.new(0, 0),
-				PaddingBottom = UDim.new(0, 0)
-			})
+			MakeElement("Padding", 0, 0, 15, 0)
 		})
 
 		TweenService:Create(NotificationFrame, TweenInfo.new(0.5, Enum.EasingStyle.Quint), {Position = UDim2.new(0, 0, 0, 0)}):Play()
@@ -433,8 +428,6 @@ function OrionLib:MakeNotification(NotificationConfig)
 		NotificationParent:Destroy()
 	end)  
 end
-
-
 
 function OrionLib:Init()
 	if OrionLib.SaveCfg then	
