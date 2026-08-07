@@ -5410,11 +5410,11 @@ do
             Switch.BackgroundTransparency = Toggle.Disabled and 0.75 or 0
             SwitchStroke.Transparency = Toggle.Disabled and 0.75 or 0
 
-            Switch.BackgroundColor3 = Toggle.Value and Library.Scheme.MainColor
+            Switch.BackgroundColor3 = Library.Scheme.MainColor
             SwitchStroke.Color = Toggle.Value and Library.Scheme.MainColor
 
-            Library.Registry[Switch].BackgroundColor3 = Toggle.Value and "MainColor"
-            Library.Registry[SwitchStroke].Color = Toggle.Value and "MainColor"
+            Library.Registry[Switch].BackgroundColor3 = "MainColor"
+            Library.Registry[SwitchStroke].Color = "MainColor"
 
             if Toggle.Disabled then
                 Label.TextTransparency = 0.8
